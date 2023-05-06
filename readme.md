@@ -57,6 +57,7 @@ Todo:
     >- execute - execute a command line command
     >- comment (// or #) - comment
     >- wait - pause the code
+    >- screenshot - takes a screenshot
 
     extra information below
 </details>
@@ -215,6 +216,19 @@ Todo:
 >>- wait/20
 </details>
 
+<details>
+<summary>screenshot</summary>
+
+>usage - type/(file for this to be saved)
+>
+>>examples:
+>>- screenshot/my_screenshot.png
+>>- screenshot/image.png
+>>- screenshot/file.png
+>
+>I know png files work I am not sure about others
+</details>
+
 </details>
 
 ## Technical details
@@ -226,11 +240,13 @@ depending on the 1st thing before the / it executes code using pyautogui
 Below is a flow chart to explain it
 
 ```mermaid
+---
+title: Flowchart to explain code
+---
 flowchart TD
-    A[file] --> B[code]
-    B --> C[execute line]
+    A(file) --> B(code)
+    B --> C(execute line)
     C --> D{is done}
-    D -- yes --> F[code compleat]
+    D -- yes --> F(code compleat)
     D -- no --> C
-
 ```

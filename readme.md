@@ -216,3 +216,21 @@ Todo:
 </details>
 
 </details>
+
+## Technical details
+
+This works by reading the macro.macro file and then goes line by line and
+
+depending on the 1st thing before the / it executes code using pyautogui
+
+Below is a flow chart to explain it
+
+```mermaid
+flowchart TD
+    A[file] --> B[code]
+    B --> C[execute line]
+    C --> D{is done}
+    D -- yes --> F[code compleat]
+    D -- no --> C
+
+```

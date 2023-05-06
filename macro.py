@@ -88,3 +88,20 @@ class macro:
 
             elif line.startswith("wait/"):
                 sleep(int(line.split("/")[1]))
+
+            elif line.startswith("cut"):
+                pyautogui.hotkey("ctrl", "x")
+
+            elif line.startswith("undo"):
+                pyautogui.hotkey("ctrl", "z")
+
+            elif line.startswith("redo"):
+                pyautogui.hotkey("ctrl", "y")
+
+            elif line.startswith("selectall"):
+                pyautogui.hotkey("ctrl", "a")
+
+            elif line.startswith("delete"):
+                pyautogui.hotkey("ctrl", "d")
+
+

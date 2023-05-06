@@ -13,7 +13,7 @@ how to use/learn
 >1. read basic syntax
 >2. read command list for descriptions
 >3. read more info on commands in other collapsed sections
->4. extra examples is macro.macro file
+>4. extra examples are macro.macro file
 >5. write your macro in macro.macro file and run main.py
 
 Todo:
@@ -45,8 +45,14 @@ Todo:
     >- key - press a key
     >- type - type in words
     >- hotkey - use a ctrl hotkey
-    >- copy - copy text
-    >- paste - paste text
+    >- extra hotkeys (most of these have obvious uses)
+    >>- copy - copy file or text
+    >>- paste - paste file or text
+    >>- cut - cut a file or text
+    >>- delete - delete a file or text
+    >>- selectall - select all text
+    >>- undo - undo last key press or hotkey
+    >>- redo - undo last undo
 - miscellaneous
     >- execute - execute a command line command
     >- comment (// or #) - comment

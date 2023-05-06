@@ -1,10 +1,8 @@
-click/1
-click/2
+goto/100/900
 move/x/50
 move/y/-50
 move/x/random/left
 move/y/random/up
-execute/pip install colorama
 key/w
 type/hello world
 // this is a comment
@@ -14,3 +12,5 @@ setpos/x/500
 hotkey/ctrl/c
 copy
 paste
+click/1
+click/2

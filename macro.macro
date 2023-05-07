@@ -12,6 +12,10 @@ setpos/x/500
 hotkey/ctrl/c
 copy
 paste
-click/1
-click/2
+click/left/2
+click/right/1
 screenshot/my_screenshot.png
+scroll/-30
+mousedown
+wait/5
+mouseup

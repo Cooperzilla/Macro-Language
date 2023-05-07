@@ -15,10 +15,10 @@ class macro:
                 pass
 
             elif line.startswith("click/"):
-                if line.split("/")[1] == "1":
-                    pyautogui.click()
-                elif line.split("/")[1] == "2":
-                    pyautogui.doubleClick()
+                if line.split("/")[2] == "1":
+                    pyautogui.click(button=line.split("/")[1])
+                elif line.split("/")[2] == "2":
+                    pyautogui.doubleClick(button=line.split("/")[1])
 
             elif line.startswith("move/"):
                 if line.split("/")[1] == "x":
@@ -60,8 +60,7 @@ class macro:
                 run([line.split("/")[1].spiit(" ")], shell=True)
 
             elif line.startswith("key/"):
-                pyautogui.keyDown(line.split("/")[1])
-                pyautogui.keyUp(line.split("/")[1])
+                pyautogui.press(line.split("/")[1])
 
             elif line.startswith("type/"):
                 pyautogui.typewrite(line.split("/")[1])
@@ -107,5 +106,14 @@ class macro:
 
             elif line.startswith("screenshot/"):
                  pyautogui.screenshot(line.split('/')[1].strip())
+
+            elif line.startswith("scroll/"):
+                 pyautogui.scroll(line.split('/')[1])
+
+            elif line.startswith("mousedown"):
+                pyautogui.mouseDown()
+
+            elif line.startswith("mouseup"):
+                pyautogui.mouseUp()
 
 

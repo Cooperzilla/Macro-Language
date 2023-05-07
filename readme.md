@@ -40,7 +40,10 @@ Todo:
     >- goto - set yhe x and y of the mouse
     >- setpos - set the x or y of the mouse
 - mouse usage
-    >- click - click once or twice
+    >- click - click left/right/middle once or twice
+    >- scroll - scroll so many clicks
+    >- mousedown - clicks with the mouse but stays down until mouseup
+    >- mouseup - unclicks the mouse from mousedown
 - keyboard
     >- key - press a key
     >- type - type in words
@@ -114,11 +117,41 @@ Todo:
 <details>
 <summary>click</summary>
 
->usage click/(1 or 2)
+>usage click/(left, right, or middle)/(1 or 2)
 >
 >>examples:
->>- click/1
->>- click/2
+>>- click/left/1
+>>- click/left/2
+>>- click/right/1
+>>-click/middle/2
+</details>
+
+<details>
+<summary>scroll</summary>
+
+>usage scroll/(number)
+>
+>>examples:
+>>- scroll/10
+>>- scroll/2
+</details>
+
+<details>
+<summary>mousedown</summary>
+
+>usage mousedown
+>
+>>examples:
+>>- mousedown
+</details>
+
+<details>
+<summary>mouseup</summary>
+
+>usage mouseup
+>
+>>examples:
+>>- mouseup
 </details>
 
 </details>
@@ -237,7 +270,7 @@ This works by reading the macro.macro file and then goes line by line and
 
 depending on the 1st thing before the / it executes code using pyautogui
 
-Below is a flow chart to explain it
+Below is a flow chart to explain it note does not render on mobile
 
 ```mermaid
 ---
@@ -251,8 +284,8 @@ flowchart TD
     D -- no --> C
 ```
 
-## Git ghraph
-I added because idk
+## Git graph
+I added because idk note does not render on mobile
 
 ```mermaid
 ---

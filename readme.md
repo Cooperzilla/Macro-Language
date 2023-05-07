@@ -250,3 +250,22 @@ flowchart TD
     D -- yes --> F(code compleat)
     D -- no --> C
 ```
+
+## Git ghraph
+I added because idk
+
+```mermaid
+---
+title: My git graph
+---
+gitGraph
+    commit
+    branch LICENSE
+    commit
+    checkout main
+    merge LICENSE
+    commit
+    commit
+    commit
+    commit
+```

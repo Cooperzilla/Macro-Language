@@ -2,7 +2,6 @@ import pyautogui
 from random import randint
 from subprocess import run
 from time import sleep
-import PIL
 
 class macro:
     def __init__(self, file):

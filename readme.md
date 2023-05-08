@@ -12,13 +12,22 @@ how to use/learn
 >2. read command list for descriptions
 >3. read more info on commands in other collapsed sections
 >4. extra examples are the example_macro.macro file
->5. download source(***requires pyqutogui***) or [latest release](https://github.com/Cooperzilla/Macro-Language/releases/tag/1.dev)
+>5. download source(***requires pyqutogui***) or [latest release](https://github.com/Cooperzilla/Macro-Language/releases/tag/release-1.0.0)
 >6. configure macro.macro
 >7. run main.py or the exe
 
 Todo:
 >- [X] figure out how to compile
 >- [X] add more hotkey functions
+>- [ ] add open website function by executing a curl command
+>- [ ] add a function to slightly move mouse to keep pc awake
+>- [ ] add a function to send mouse to center of screen
+>- [ ] add a part at the bottom of the readme about how I compile
+>- [ ] test the latest release
+>
+> Long term
+>- [ ] add start up parameters
+>- [ ] loops ifs and variables possibly
 
 ## Documentation
 <details>
@@ -65,7 +74,7 @@ Todo:
     >- getpos - pops up a message with your mouse posistion
 - Commands
     >- execute - execute a command line command
-    >- start - start running a proggram
+    >- start - start running a program
 - miscellaneous
     >- comment (// or #) - comment
     >- wait - pause the code
@@ -311,9 +320,9 @@ Todo:
 >usage - alert/(title)/(text)/(optional button name)
 >
 >>examples:
->>- alert/info/this is infornation
->>- alert/title/infornation/ok
->>- alert/this is a title/infornation or something/conform
+>>- alert/info/this is information
+>>- alert/title/information/ok
+>>- alert/this is a title/information or something/conform
 </details>
 
 <details>
@@ -331,7 +340,7 @@ Todo:
 >usage - getpos
 >
 >>examples:
->>- getscreen
+>>- getpos
 </details>
 </details>
 
@@ -354,7 +363,7 @@ Todo:
 <details>
 <summary>start</summary>
 
->usage start/(proggram)
+>usage start/(program)
 >
 >>examples:
 >>- start/minecraft
@@ -426,6 +435,7 @@ gitGraph
     commit
     checkout main
     merge LICENSE
+    commit
     commit
     commit
     commit

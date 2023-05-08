@@ -33,11 +33,11 @@ class macro:
                             pyautogui.moveTo(randint(-1*(pyautogui.size()[0]-pyautogui.position()[0]), pyautogui.size()[0]), pyautogui.position()[1])
                 elif line.split("/")[1] == "y":
                     if not line.split("/")[2] == "random":
-                        pyautogui.moveTo(pyautogui.position()[0], int(line.split("/")[2])+pyautogui.position()[1])
+                        pyautogui.moveTo(pyautogui.position()[0], -1*int(line.split("/")[2])+pyautogui.position()[1])
                     elif line.split("/")[2] == "random":
                         try:
                             if line.split("/")[3] == "up":
-                                pyautogui.moveTo(pyautogui.position()[0], randint(-pyautogui.position()[1], pyautogui.size()[1]))
+                                pyautogui.moveTo(pyautogui.position()[0], randint(-1*pyautogui.position()[1], pyautogui.size()[1]))
                             elif line.split("/")[3] == "down":
                                 pyautogui.moveTo(pyautogui.position()[0], randint(-1*(pyautogui.size()[1]-pyautogui.position()[1]), pyautogui.position()[1]))
                         except:
@@ -136,3 +136,4 @@ class macro:
             elif line.startswith("start/"):
                 pyautogui.hotkey("win", "r")
                 pyautogui.typewrite(line.split("/")[1])
+                pyautogui.press("enter")

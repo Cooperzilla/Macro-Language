@@ -7,18 +7,18 @@ I was bored so i made this
 
 Its a macro language that is ran using Python
 
-**Requires the pip module pyautogui**
-
 how to use/learn
 >1. read basic syntax
 >2. read command list for descriptions
 >3. read more info on commands in other collapsed sections
->4. extra examples are macro.macro file
->5. write your macro in macro.macro file and run main.py
+>4. extra examples are the example_macro.macro file
+>5. download source(***requires pyqutogui***) or [latest release](https://github.com/Cooperzilla/Macro-Language/releases/tag/1.dev)
+>6. configure macro.macro
+>7. run main.py or the exe
 
 Todo:
->- figure out how to compile
->- add more hotkey functions
+>- [X] figure out how to compile
+>- [X] add more hotkey functions
 
 ## Documentation
 <details>
@@ -43,11 +43,13 @@ Todo:
     >- click - click left/right/middle once or twice
     >- scroll - scroll so many clicks
     >- mousedown - clicks with the mouse but stays down until mouseup
-    >- mouseup - unclicks the mouse from mousedown
+    >- mouseup - un-clicks the mouse from mousedown
 - keyboard
     >- key - press a key
     >- type - type in words
     >- hotkey - use a ctrl hotkey
+    >- keydown - presses with the key but stays down until keyup
+    >- keyup - un-presses the mouse from mousedown
     >- extra hotkeys (most of these have obvious uses)
     >>- copy - copy file or text
     >>- paste - paste file or text
@@ -56,11 +58,17 @@ Todo:
     >>- selectall - select all text
     >>- undo - undo last key press or hotkey
     >>- redo - undo last undo
-- miscellaneous
+- Screen
+    >- screenshot - takes a screenshot
+    >- Alert - pops up a message
+    >- getscreen - pops uop a message with your screen size
+    >- getpos - pops up a message with your mouse posistion
+- Commands
     >- execute - execute a command line command
+    >- start - start running a proggram
+- miscellaneous
     >- comment (// or #) - comment
     >- wait - pause the code
-    >- screenshot - takes a screenshot
 
     extra information below
 </details>
@@ -139,7 +147,7 @@ Todo:
 <details>
 <summary>mousedown</summary>
 
->usage mousedown
+>usage mousedown/
 >
 >>examples:
 >>- mousedown
@@ -182,6 +190,26 @@ Todo:
 </details>
 
 <details>
+<summary>keydown</summary>
+
+>usage keydown/(key)
+>
+>>examples:
+>>- keydown/w
+>>- keydown/ctrl
+</details>
+
+<details>
+<summary>keyup</summary>
+
+>usage keyup(key)
+>
+>>examples:
+>>- keyup/w
+>>- keydown/ctrl
+</details>
+
+<details>
 <summary>hotkey</summary>
 
 >usage - hotkey/(a extra key ex: ctrl)/(a key)
@@ -192,6 +220,19 @@ Todo:
 >>- hotkey/alt/tab
 </details>
 
+</details>
+
+<details>
+<summary>Hotkeys</summary>
+
+<details>
+<summary>copy</summary>
+
+>usage - copy
+>
+>>examples:
+>>- copy
+</details>
 <details>
 <summary>paste</summary>
 
@@ -202,18 +243,100 @@ Todo:
 </details>
 
 <details>
-<summary>copy</summary>
+<summary>cut</summary>
 
->usage - copy
+>usage - cut
 >
 >>examples:
->>- copy
+>>- cut
 </details>
+<details>
+<summary>undo</summary>
 
+>usage - undo
+>
+>>examples:
+>>- undo
 </details>
 
 <details>
-<summary>Miscellaneous</summary>
+<summary>redo</summary>
+
+>usage - redo
+>
+>>examples:
+>>- redo
+</details>
+
+<details>
+<summary>selectall</summary>
+
+>usage - selectall
+>
+>>examples:
+>>- selectall
+</details>
+
+<details>
+<summary>delete</summary>
+
+>usage - delete
+>
+>>examples:
+>>- delete
+</details>
+
+</details>
+
+
+<details>
+<summary>Screen</summary>
+
+<details>
+<summary>screenshot</summary>
+
+>usage - screenshot/(file for this to be saved)
+>
+>>examples:
+>>- screenshot/my_screenshot.png
+>>- screenshot/image.png
+>>- screenshot/file.png
+>
+>I know png files work I am not sure about other file types
+</details>
+
+<details>
+<summary>alert</summary>
+
+>usage - alert/(title)/(text)/(optional button name)
+>
+>>examples:
+>>- alert/info/this is infornation
+>>- alert/title/infornation/ok
+>>- alert/this is a title/infornation or something/conform
+</details>
+
+<details>
+<summary>getscreen</summary>
+
+>usage - getscreen
+>
+>>examples:
+>>- getscreen
+</details>
+
+<details>
+<summary>getpos</summary>
+
+>usage - getpos
+>
+>>examples:
+>>- getscreen
+</details>
+</details>
+
+<details>
+<summary>Commands</summary>
 
 <details>
 <summary>Execute</summary>
@@ -229,7 +352,26 @@ Todo:
 </details>
 
 <details>
-<summary>Comment</summary>
+<summary>start</summary>
+
+>usage start/(proggram)
+>
+>>examples:
+>>- start/minecraft
+>>- start/code
+>>- start/cmd
+>
+>***Experimental may not work***
+</details>
+
+</details>
+
+
+<details>
+<summary>Miscellaneous</summary>
+
+<details>
+<summary>comment</summary>
 
 >usage - // or #
 >
@@ -249,19 +391,6 @@ Todo:
 >>- wait/20
 </details>
 
-<details>
-<summary>screenshot</summary>
-
->usage - type/(file for this to be saved)
->
->>examples:
->>- screenshot/my_screenshot.png
->>- screenshot/image.png
->>- screenshot/file.png
->
->I know png files work I am not sure about others
-</details>
-
 </details>
 
 ## Technical details
@@ -270,7 +399,7 @@ This works by reading the macro.macro file and then goes line by line and
 
 depending on the 1st thing before the / it executes code using pyautogui
 
-Below is a flow chart to explain it note does not render on mobile
+Below is a flow chart to explain it (does not render on mobile)
 
 ```mermaid
 ---
@@ -285,7 +414,7 @@ flowchart TD
 ```
 
 ## Git graph
-I added because idk note does not render on mobile
+I added because idk (does not render on mobile)
 
 ```mermaid
 ---
@@ -297,6 +426,8 @@ gitGraph
     commit
     checkout main
     merge LICENSE
+    commit
+    commit
     commit
     commit
     commit

@@ -1,0 +1,21 @@
+goto/100/900
+move/x/50
+move/y/-50
+move/x/random/left
+move/y/random/up
+key/w
+type/hello world
+// this is a comment
+# this is also a comment
+goto/300/700
+setpos/x/500
+hotkey/ctrl/c
+copy
+paste
+click/left/2
+click/right/1
+screenshot/my_screenshot.png
+scroll/-30
+mousedown
+wait/5
+mouseup

@@ -115,4 +115,24 @@ class macro:
             elif line.startswith("mouseup"):
                 pyautogui.mouseUp()
 
+            elif line.startswith("keydown"):
+                pyautogui.keyDown(line.split('/')[1])
 
+            elif line.startswith("keyup"):
+                pyautogui.keyeUp(line.split('/')[1])
+
+            elif line.startswith("getscreen"):
+                pyautogui.alert(text=f'x: {pyautogui.size()[0]} y: {pyautogui.size()[1]}', title='Screen size', button='OK')
+
+            elif line.startswith("getpos"):
+                pyautogui.alert(text=f'x: {pyautogui.position()[0]} y: {pyautogui.position()[1]}', title='Mouse pos', button='OK')
+
+            elif line.startswith("alert/"):
+                try:
+                    pyautogui.alert(text=line.split('/')[2], title=line.split('/')[1], button=line.split('/')[3])
+                except:
+                    pyautogui.alert(text=line.split('/')[2], title=line.split('/')[1], button="Ok")
+
+            elif line.startswith("start/"):
+                pyautogui.hotkey("win", "r")
+                pyautogui.typewrite(line.split("/")[1])
